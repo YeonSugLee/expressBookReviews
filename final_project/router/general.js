@@ -25,11 +25,43 @@ public_users.get('/',function (req, res) {
     res.send(JSON.stringify(books,null,4));
 });
 
+//Get book list using async-await.
+async function getAllBooks (){
+    try {
+        const resp = await axios({
+          method: 'get',
+          url: "https://tommylee62-5000.theiadocker-0-labs-prod-theiak8s-4-tor01.proxy.cognitiveclass.ai/",
+          responseType: 'json'
+        })
+        console.log(resp);
+      } 
+      catch(e) {
+        console.log(e);
+      }
+}
+
 // Get book details based on ISBN
 public_users.get('/isbn/:isbn',function (req, res) {
     const isbn = req.params.isbn;
     res.send(books[isbn])
  });
+
+
+// Get book by ISBN using async-await.
+async function getBookByIsbn (isbn){
+    try {
+        const resp = await axios({
+          method: 'get',
+          url: "https://tommylee62-5000.theiadocker-0-labs-prod-theiak8s-4-tor01.proxy.cognitiveclass.ai/isbn/"+ isbn,
+          responseType: 'json'
+        })
+        console.log(resp);
+      } 
+      catch(e) {
+        console.log(e);
+      }
+}
+
   
 // Get book details based on author
 public_users.get('/author/:author',function (req, res) {
@@ -43,6 +75,21 @@ public_users.get('/author/:author',function (req, res) {
     res.send(bookList)
 });
 
+// Get book by author using async-await.
+async function getBookByIsbn (author){
+    try {
+        const resp = await axios({
+          method: 'get',
+          url: "https://tommylee62-5000.theiadocker-0-labs-prod-theiak8s-4-tor01.proxy.cognitiveclass.ai/author/"+ author,
+          responseType: 'json'
+        })
+        console.log(resp);
+      } 
+      catch(e) {
+        console.log(e);
+      }
+}
+
 // Get all books based on title
 public_users.get('/title/:title',function (req, res) {
     const title = req.params.title;
@@ -54,6 +101,21 @@ public_users.get('/title/:title',function (req, res) {
 
     res.send(bookList)
 });
+
+// get book by title using async-await.
+async function getBookByIsbn (title){
+    try {
+        const resp = await axios({
+          method: 'get',
+          url: "https://tommylee62-5000.theiadocker-0-labs-prod-theiak8s-4-tor01.proxy.cognitiveclass.ai/isbn/"+ title,
+          responseType: 'json'
+        })
+        console.log(resp);
+      } 
+      catch(e) {
+        console.log(e);
+      }
+}
 
 //  Get book review
 public_users.get('/review/:isbn',function (req, res) {
