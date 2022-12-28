@@ -33,7 +33,7 @@ async function getAllBooks (){
           url: "https://tommylee62-5000.theiadocker-0-labs-prod-theiak8s-4-tor01.proxy.cognitiveclass.ai/",
           responseType: 'json'
         })
-        console.log(resp);
+        return resp;
       } 
       catch(e) {
         console.log(e);
@@ -55,7 +55,7 @@ async function getBookByIsbn (isbn){
           url: "https://tommylee62-5000.theiadocker-0-labs-prod-theiak8s-4-tor01.proxy.cognitiveclass.ai/isbn/"+ isbn,
           responseType: 'json'
         })
-        console.log(resp);
+        return resp;
       } 
       catch(e) {
         console.log(e);
@@ -83,7 +83,7 @@ async function getBookByIsbn (author){
           url: "https://tommylee62-5000.theiadocker-0-labs-prod-theiak8s-4-tor01.proxy.cognitiveclass.ai/author/"+ author,
           responseType: 'json'
         })
-        console.log(resp);
+        return resp;
       } 
       catch(e) {
         console.log(e);
@@ -110,7 +110,7 @@ async function getBookByIsbn (title){
           url: "https://tommylee62-5000.theiadocker-0-labs-prod-theiak8s-4-tor01.proxy.cognitiveclass.ai/isbn/"+ title,
           responseType: 'json'
         })
-        console.log(resp);
+        return resp;
       } 
       catch(e) {
         console.log(e);
