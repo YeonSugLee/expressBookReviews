@@ -76,7 +76,7 @@ public_users.get('/author/:author',function (req, res) {
 });
 
 // Get book by author using async-await.
-async function getBookByIsbn (author){
+async function getBookByAuthor (author){
     try {
         const resp = await axios({
           method: 'get',
@@ -103,7 +103,7 @@ public_users.get('/title/:title',function (req, res) {
 });
 
 // get book by title using async-await.
-async function getBookByIsbn (title){
+async function getBookByTitle (title){
     try {
         const resp = await axios({
           method: 'get',
